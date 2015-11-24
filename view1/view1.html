@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="form-group">
+			<input type="text" placeholder="User Name" class="form-control" ng-model="user">
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="Password" class="form-control" ng-model="pass">
+			<button class="btn btn-primary" ng-click="login(user,pass)" ng-hide="loggedIn">Log in</button>
+			<button class="btn btn-danger" ng-click="logout()" ng-show="loggedIn">Log out</button>
+		</div>
+	</div>
+</div>
+
+<div class="row" ng-show="loggedIn">
+	<div class="col-md-6 col-md-offset-3">
+		<h3>Get One Record</h3>
+		<div class="form-group">
+			<input type="text" placeholder="id" class="form-control" ng-model="id">
+		</div>
+		<div class="form-group">
+			<input type="text" placeholder="id_field" class="form-control" ng-model="idField">
+			<button class="btn btn-primary" ng-click="oneRecord(id,idField)">Query</button>
+		</div>
+		<div class="well" ng-show="oneRecordQuery">
+			<table class="table">
+				<thead>
+					<th>XDID</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Email</th>
+					<th>Company</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{oneRecordData.XDID}}</td>
+						<td>{{oneRecordData.FirstName}}</td>
+						<td>{{oneRecordData.LastName}}</td>
+						<td>{{oneRecordData.Email}}</td>
+						<td>{{oneRecordData.Company}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" ng-show="loggedIn">
+	<div class="col-md-6 col-md-offset-3">
+	<h3>Multiple Paramater Query</h3>
+		<div class="form-group">
+			<label for="filter">Enter a SQL WHERE statement without the keyword WHERE</label>
+			<label for="filter">example: Company = 'SJ Louis' and FirstName = 'Eric'</label>
+			<input type="text" placeholder="filter" class="form-control" id="filter" ng-model="filter">
+			<button class="btn btn-primary" ng-click="multiParams(filter)">Query</button>
+		</div>
+
+		<div class="well" ng-show="multiParamsQuery">
+			<table class="table">
+				<thead>
+					<th>XDID</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Email</th>
+					<th>Company</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in response.data.resource">
+						<td>{{row.XDID}}</td>
+						<td>{{row.FirstName}}</td>
+						<td>{{row.LastName}}</td>
+						<td>{{row.Email}}</td>
+						<td>{{row.Company}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h3>Response</h3>
+		<pre id="response">{{response | json}}</pre>
+	</div>
+</div>

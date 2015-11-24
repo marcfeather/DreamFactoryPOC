@@ -1,0 +1,12 @@
+{
+  "name": "DreamFactoryPOC",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-route": "latest",
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "html5-boilerplate": "latest"
+  },
+  "private": true
+}
