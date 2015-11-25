@@ -2,7 +2,7 @@
   "name": "DreamFactoryPOC",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "1.4.7",
+    "angular": "1.4.8",
     "angular-route": "latest",
     "jquery": "latest",
     "bootstrap": "latest",
