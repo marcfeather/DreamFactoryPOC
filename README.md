@@ -10,3 +10,7 @@
 ### Serving
 
 Run server by ```npm start``` inside working directory
+
+### Viewing
+
+Navigate to ```http://localhost:8000``` in a web browser.
