@@ -19,7 +19,7 @@ angular.module('DreamFactoryPOC.view1', ['ngRoute'])
 	$scope.login = function(user,pass) {
 		$http({
 		  method: 'POST',
-		  url: 'http://localhost:80/api/v2/system/admin/session',
+		  url: 'http://localhost:80/api/v2/user/session',
 		  data: {
 		  	"email": user,
 		  	"password": pass,
@@ -39,9 +39,8 @@ angular.module('DreamFactoryPOC.view1', ['ngRoute'])
 			method: "DELETE",
 			url: "http://localhost:80/api/v2/user/session",
 			headers: {
-				"x-dreamfactory-application-name": "dfTutorial",
+				"x-dreamfactory-api-key": "7b7c12341476fc3e5d068c1304824925690da4186122f4e687f7948bd60597ae",
 	    		"x-dreamfactory-session-token": token,
-	    		"cache-control": "no-cache"
 			}
 		}).then(function success(response) {
 			$scope.response = response;
@@ -58,9 +57,8 @@ angular.module('DreamFactoryPOC.view1', ['ngRoute'])
 			method: "GET",
 			url: "http://localhost:80/api/v2/dfTutorial/_table/tbl_ExternalHDSSync/"+id+"?id_field="+field+"",
 			headers: {
-				"x-dreamfactory-application-name": "dfTutorial",
-	    		"x-dreamfactory-session-token": sessionToken,
-	    		"cache-control": "no-cache"
+				"x-dreamfactory-api-key": "7b7c12341476fc3e5d068c1304824925690da4186122f4e687f7948bd60597ae",
+	    		"x-dreamfactory-session-token": sessionToken
 			}
 		}).then(function success(response) {
 			$scope.oneRecordData = response.data;
@@ -75,9 +73,8 @@ angular.module('DreamFactoryPOC.view1', ['ngRoute'])
 			method: "GET",
 			url: "http://localhost:80/api/v2/dfTutorial/_table/tbl_ExternalHDSSync?filter="+filter,
 			headers: {
-				"x-dreamfactory-application-name": "dfTutorial",
-	    		"x-dreamfactory-session-token": sessionToken,
-	    		"cache-control": "no-cache"
+				"x-dreamfactory-api-key": "7b7c12341476fc3e5d068c1304824925690da4186122f4e687f7948bd60597ae",
+	    		"x-dreamfactory-session-token": sessionToken
 			}
 		}).then(function success(response) {
 			$scope.response = response;
