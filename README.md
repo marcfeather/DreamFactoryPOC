@@ -9,7 +9,7 @@
 
 ### Customizing
 
-All calls to the DreamFactory API are found in `view1.js`. Change the `url` and `data` of the `$http` requests to suite your API's needs.
+All calls to the DreamFactory API are found in `view1.js`. Change the `url` and `data` of the `$http` requests to suite your API's needs. Also be sure to change the API key header to match that of your DreamFactory app.
 
 ### Serving
 
